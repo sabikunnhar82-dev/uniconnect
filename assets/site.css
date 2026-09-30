@@ -1,0 +1,56 @@
+
+/* Layout is black and white (group decision). Colour only appears in the status pills (Green/Amber/Red, risk bands).
+   One typeface, Lexend (designed to make reading easier), because accessibility (WCAG 2.1 AA) is part of the project. */
+:root{--muted:#555;--rule:#c8c8c8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}section,figure{scroll-margin-top:16px}
+body{margin:0;font:16.5px/1.65 "Lexend",Verdana,sans-serif;color:#000;background:#fff}
+a{color:#000;text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #000;outline-offset:2px}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:#fff;border:2px solid #000;padding:8px;z-index:99}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1360px;margin:0 auto}
+.side{position:sticky;top:0;align-self:start;height:100vh;overflow:auto;padding:28px 22px;border-right:1px solid #000}
+.site-name{display:block;font-size:1.45rem;font-weight:700;text-decoration:none;line-height:1.2}
+.site-sub{margin:.3em 0 1.6em;color:var(--muted);font-size:.9rem}
+.side ol{margin:0;padding-left:1.5em}.side li{margin:.4em 0}
+.side a{text-decoration:none}.side a:hover{text-decoration:underline}
+.side a[aria-current=page]{font-weight:700;text-decoration:underline}
+.side ol.sub{list-style:none;margin:.35em 0 .7em;padding-left:.8em;border-left:2px solid #000;font-size:.87rem}
+.side ol.sub li{margin:.25em 0}
+.side .extra{display:block;margin-top:1.4em;padding-top:1em;border-top:1px solid var(--rule)}
+main{padding:34px 44px 60px;min-width:0}
+main p,main ul,main ol,.prose{max-width:72ch}
+h1{font-size:2.3rem;line-height:1.15;margin:0 0 .35em}
+h2{font-size:1.45rem;line-height:1.25;margin:2.3em 0 .6em}
+h3{font-size:1.1rem;margin:1.3em 0 .4em}
+.intro,.lede{font-size:1.12rem;margin:0 0 1.6em}
+.tbl{overflow-x:auto;margin:12px 0 22px}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{padding:7px 10px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+thead th{border-bottom:2px solid #000;font-weight:700}
+table.small{font-size:.86rem}table.kv td:first-child,table.status td:first-child{font-weight:700;width:170px}
+table.status{max-width:760px}table.status thead th:first-child{width:170px}
+caption{text-align:left;font-weight:700;padding:0 0 6px}
+figure{margin:22px 0}
+figure img{width:100%;height:auto;display:block;border:1px solid #000;border-radius:3px;cursor:zoom-in}
+figcaption{font-size:.92rem;margin-top:7px;max-width:72ch}.src{color:var(--muted)}
+.figs{display:grid;grid-template-columns:1fr 1fr;gap:22px}.figs figure{margin:0}
+ul.links li{margin:.3em 0}
+.decision{border-left:4px solid #000;padding:2px 0 2px 16px}
+.rag{display:inline-block;padding:0 7px;border:1px solid #000;border-radius:999px;font-size:.82rem;font-weight:700;color:#111;white-space:nowrap}
+.rag-green{background:#b7ebc6}.rag-amber{background:#ffd98a}.rag-red{background:#ffb4b4}.rag-orange{background:#ffc98a}
+.rag-yellow{background:#fff2a8}.rag-grey{background:#e3e6ea}
+.raci{display:inline-block;min-width:22px;text-align:center}.raci-a{font-weight:700;text-decoration:underline}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+ol.lifecycle li{margin:.3em 0}
+details{border:1px solid #000;border-radius:3px;padding:8px 12px;margin:12px 0}summary{cursor:pointer;font-weight:700}
+.report{border:1px dashed #000;padding:10px 16px}
+.verdict{border-left:4px solid #000;padding-left:16px}
+.note{font-size:.92rem}.btn{display:inline-block;border:2px solid #000;border-radius:4px;padding:6px 12px;text-decoration:none;font-weight:700}
+.refs li{margin-bottom:6px;padding-left:1.4em;text-indent:-1.4em;list-style:none}
+table.sitemap td:first-child{white-space:nowrap}
+.pager{display:flex;justify-content:space-between;gap:16px;margin-top:52px;padding-top:14px;border-top:1px solid #000}
+footer{border-top:1px solid #000;padding:18px 44px;font-size:.9rem;color:var(--muted)}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;z-index:50;padding:20px}
+#lb.open{display:flex}#lb img{max-width:100%;max-height:100%;background:#fff}#lb button{position:absolute;top:12px;right:16px;font-size:28px;background:none;color:#fff;border:0;cursor:pointer}
+@media (max-width:880px){.layout{display:block}.side{position:static;height:auto;border-right:0;border-bottom:1px solid #000;padding:18px 16px}
+.side ol.sub{display:none}main{padding:22px 16px 40px}.figs,.cols{grid-template-columns:1fr}h1{font-size:1.8rem}footer{padding:18px 16px}}
